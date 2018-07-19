@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta name="referrer" content="never">
+    <title>hello</title>
+    <meta id="viewport" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1; user-scalable=no;">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"  rel="stylesheet">
+
+    <link	rel="stylesheet"	type="text/css"	media="all"	th:href="@{/css/hello/nav.css}">
+    <link	rel="stylesheet"	type="text/css"	media="all"	th:href="@{/css/hello/main.css}">
+</head>
+<body>
+<div th:insert="~{header	::	copy}"></div>
+
+
+<!--<p th:text="'Hello！ ' + ${name} + '!'">afffffffff</p>-->
+<article class="container ">
+    <div class="col-md-7 ">
+<h1 id="ct1" th:text="'' + ${article.title} + '!'">标题未能正常显示</h1>
+
+<ul class="list-inline ">
+    <li class="views"  th:text="'浏览:' + ${article.yuedu} ">view未能正常显示</li>
+    <li class="views"  th:text="'日期:' + ${article.riqi} ">view未能正常显示</li>
+    <li     th:text="'标签:' + ${article.tag} + '!'"
+            th:if="${not	#lists.isEmpty(article.tag)}">
+
+        没有标签</li>
+</ul>
+    <p class="summary" th:utext=" ${article.summary} ">summary未能正常显示</p>
+        <div th:each="mainImg	:	${mainImgList}">
+            <img  th:src="${mainImg}"
+                  th:if="${not	#lists.isEmpty(mainImg)}">
+        </div>
+        <!--循环序号-->
+        <ul class="list-unstyled hidden-xs " id="nav">
+            <li class="" th:each="stepNO,iterSta	:	    ${stepList}">
+                <a    th:text="${iterSta.count}"
+                         th:href="'#step'+${iterSta.count}">未正常显示步骤序号</a>
+            </li>
+        </ul>
+        <!--循环步骤-->
+        <hr><b>方法步骤</b></p>
+    <ul class="list-unstyled" id="steps-ul">
+        <li class="demo" th:each="step,iterSta	:	${stepList}"
+            th:id="'step'+${iterSta.count}">
+
+            <p th:utext="${step.text} "></p>
+            <div th:each="image	:	${step.imgList}">
+                <img  th:src="${image}"
+                      th:if="${not	#lists.isEmpty(image)}">
+            </div>
+        </li>
+    </ul>
+
+        <p th:if="${not	#lists.isEmpty(attentionList)}"><hr><b>注意事项</b></p>
+        <div class="demo" th:each="attention	:	${attentionList}">
+
+            <p  th:utext="${attention}"
+                  th:if="${not	#lists.isEmpty(attention)}">
+        </div>
+
+    </div>
+</article>
+<!--<a href="#ct1">跳转到词条1</a>-->
+<!--/*@thymesVar id="article" type=""*/-->
+<!--<p th:text="'Hello！, ' + ${article} + '!'">afffffffff</p>-->
+
+
+
+<div th:insert="~{footer	::	copy}"></div>
+
+
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script	type="text/javascript"	th:src="@{/js/hello/jquery.nav.js}"></script>
+<script>
+    $(document).ready(function() {
+        $('#nav').onePageNav();
+
+    });
+</script>
+</body>
+</html>

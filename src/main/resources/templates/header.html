@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.opcity-set{opacity: 0.8;
+}
+body{
+padding-top: 70px;
+}
+@media screen and (min-width: 760px) {
+.width-set{
+	width: 450px!important;
+	}
+}
+</style>
+</head>
+<div	th:fragment="copy">
+<nav class="navbar  navbar-inverse navbar-top opcity-set">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+				aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="http://www.ORZSO.com" title="ORZSO首页">ORZSO</a>
+		</div>
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<form class="navbar-form " action="/sfsd" method="get">
+				<div class="form-group">
+					<input type="text" name="keyword" id="keyword" class="form-control width-set"
+						placeholder="Search BT in here ">
+				</div>
+				<button type="button" class="btn btn-default" onclick="location='/s/'+document.getElementById('keyword').value"><span class="glyphicon glyphicon-search"></span></button>
+			</form>
+		</div>
+		<!-- /.navbar-collapse -->
+	</div>
+	<!-- /.container-fluid -->
+</nav>
+</div>
+<script>
+	document.onkeydown = function (event) {
+				var e = event || window.event || arguments.callee.caller.arguments[0];
+                if (e && e.keyCode == 13) {
+                		event.preventDefault();
+                     window.location.href="/s/"+document.getElementById('keyword').value; 
+                }
+            };
+
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?0c37319099eb4f3ce6076bf4e8e57c6b";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+</html>

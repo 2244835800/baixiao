@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta name="referrer" content="never">
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/hello/nav.css}">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/hello/main.css}">
+</head>
+<body>
+<div th:insert="~{header	::	copy}"></div>
+
+<div id="title" class="edit-section">
+    <div>
+        <div class="edit-section-tit">标题<span>（必填）</span></div>
+        <textarea maxlength="44" placeholder="在这里输入标题" class="edit-ipt titleEdit" style="height: 22px;"></textarea>
+        <div class="btn-select-wrap">
+            <div class="btn-select-box"><a href="javascript:;" class="btn-select firstSelect"
+                                           data-cateid="">选择一级分类<i></i></a>
+                <p class="select-err-txt"></p></div>
+        </div>
+    </div>
+    <div id="summary">
+        <div class="edit-section-tit">简介&amp;视频<span>（选填）</span></div>
+        <textarea cols="20" rows="2" placeholder="点击这里输入简介" class="edit-ipt summaryText"
+                  style="height: 22px; overflow: hidden;"></textarea></div>
+    <div class="video-area">
+        <div class="video-box">
+            <div class="video-upload">
+                <div class="video-add">
+                    <div class="video-add-txt">上传视频</div>
+                    <input type="file" accept="video/mp4" class="browser_picup videoInput"></div>
+            </div>
+            <p class="video-txt">目前仅支持MP4格式，大小50M以内的视频文件<br>上传需审核通过后才会出现在所发布的指南中</p></div>
+        <video controls="" id="videoHide" style="display: none;"></video>
+    </div>
+    <div class="pic-area">
+        <div class="pic-section"><a href="javascript:;" class="pic-tab-add"><i></i>添加图片<input type="file" multiple=""
+                                                                                              accept="image/*"
+                                                                                              class="browser_picup picInput"></a>
+        </div>
+    </div>
+</div>
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">标题</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">摘要</label>
+        <textarea type="password" class="form-control" id="exampleInputPassword1" placeholder="点击这里输入简介"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" id="exampleInputFile">
+        <p class="help-block">Example block-level help text here.</p>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox"> Check me out
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" th:src="@{/js/hello/jquery.nav.js}"></script>
+<script>
+
+</script>
+</body>
+</html>

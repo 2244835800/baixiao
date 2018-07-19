@@ -1,0 +1,35 @@
+#nav {
+    left: 20px;
+    list-style: none;
+    margin: 0;
+    position: fixed;
+    /*top: 20px;*/
+}
+
+#nav li {
+    margin-bottom: 2px;
+}
+
+#nav a {
+    background: #ededed;
+    color: #666;
+    display: block;
+    font-size: 14px;
+    padding: 5px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#nav a:hover {
+    background: #dedede;
+}
+
+#nav .current a ,.current{
+    background: #666;
+    color: #ededed;
+}
+
+#container {
+    margin: 0 auto;
+    width: 800px;
+}

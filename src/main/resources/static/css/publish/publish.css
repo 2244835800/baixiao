@@ -1,0 +1,25 @@
+
+
+input:focus {
+    outline: none;
+}
+
+.input_text {
+    outline: none;
+    width: 500px;
+  
+    text-indent: 10px;
+    font-size: 18px;
+    border-color: #c7bcbc;
+    border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    display: block;
+    margin: 0 auto;
+}
+input,button,select,textarea{outline:none}
+textarea{resize:none}
+
+

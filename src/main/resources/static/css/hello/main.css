@@ -1,0 +1,46 @@
+/*立体阴影效果*/
+/**
+*deg控制阴影旋转角度
+*/
+.demo {
+    display: inline-block;
+    position: relative;
+    margin: 15px;
+    padding: 20px;
+    background: #fafafa;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0 1px 0 #fff;
+}
+
+.demo::before, .demo::after {
+    position: absolute;
+    content: "";
+    top: 10px;
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: rotate(-1.2deg);
+    -moz-transform: rotate(-1.2deg);
+    -o-transform: rotate(-1.2deg);
+    -ms-transform: rotate(-1.2deg);
+    transform: rotate(-1.2deg);
+    z-index: -1;
+}
+
+.demo::after {
+    right: 10px;
+    left: auto;
+    -webkit-transform: rotate(1.2deg);
+    -moz-transform: rotate(1.2deg);
+    -o-transform: rotate(1.2deg);
+    -ms-transform: rotate(1.2deg);
+    transform: rotate(1.2deg);
+}
+
+.demo img {
+    vertical-align: bottom;
+}
